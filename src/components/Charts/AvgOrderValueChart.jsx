@@ -41,21 +41,22 @@ const AvgOrderValueChart = ({ orderValueData }) => {
       </div>
 
       <div className="avg-order-chart-total">
-        <div>₹{total} 
-        <span className="avg-order-chart-percentage">
+        <div className="avg-order-total-cont">
+          ₹{total}
+          <span className="avg-order-chart-percentage">
             +{percentageDifference}%
           </span>
-          </div>{" "}
+        </div>{" "}
         <div className="sales-summary1">
           <div className="amount-container">
             <div className="amount-circle"></div>
 
-            <span>Direct</span>
+            <span>Current</span>
           </div>
           <div className="amount-container">
             <div className="amount-circle1"></div>
 
-            <span>Indirect</span>
+            <span>Previous</span>
           </div>
         </div>
       </div>
@@ -88,11 +89,11 @@ const AvgOrderValueChart = ({ orderValueData }) => {
             type="number"
             dataKey="y"
             name="Value"
-            tickFormatter={(value) => `₹${(value / 1000).toFixed(1)}k`}
+            tickFormatter={(value) => `${(value / 100)}`}
           />
           <ZAxis range={[100]} />
           <Tooltip
-            formatter={(value) => `₹${(value / 1000).toFixed(1)}k`}
+            formatter={(value) => `₹${(value / 1000)}`}
             cursor={{ fill: "rgba(0, 0, 0, 0.1)" }}
           />
 
@@ -100,14 +101,14 @@ const AvgOrderValueChart = ({ orderValueData }) => {
             name="Current"
             data={chartDataCurrent}
             fill="#6366F1"
-            line
+            line={{ strokeWidth: 2 }}
             shape={<RenderNoShape />}
           />
           <Scatter
             name="Previous"
             data={chartDataPrevious}
             fill="#94A3B8"
-            line
+            line={{ strokeWidth: 2 }}
             shape={<RenderNoShape />}
           />
         </ScatterChart>

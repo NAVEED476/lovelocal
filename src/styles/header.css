@@ -37,32 +37,37 @@
   }
   
   .avatar-container .avatar {
-    margin-left: -15px; /* Adjust this value for the desired overlap */
-    z-index: 1; /* Ensure proper stacking order */
+    margin-left: -15px;
+    z-index: 1; 
   }
 
   .avatar-container .avatar:first-child {
-    margin-left: 0; /* No margin for the first avatar */
+    margin-left: 0;
   }
   
   
   .avatar {
     width: 40px;
     height: 40px;
-    background-color: #ccc;
     border-radius: 50%;
-    border: 2px solid #fff;
+    
+  }
+
+  .avatar img{
+    object-fit: cover;
+    width: fit-content;
   }
   
   .add-avatar {
     width: 40px;
     height: 40px;
     background-color: #fff;
-    border: 2px dashed #ccc;
+    /* border: 2px solid #ccc; */
     border-radius: 50%;
     color: #555;
     font-size: 1.2rem;
     cursor: pointer;
+    border: 2px solid #fff;
   }
 
   .header-right-container{
@@ -107,7 +112,6 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    /* background: url('/path-to-paper-plane-icon.png') no-repeat center center; */
     background-size: contain;
   }
   

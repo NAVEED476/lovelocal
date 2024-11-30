@@ -7,7 +7,10 @@
     max-width: 600px;
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-bottom: 4px;
   }
+
+
   
   .avg-order-chart-header {
     display: flex;
@@ -46,6 +49,7 @@
   font-weight: 700;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .sales-summary1 {

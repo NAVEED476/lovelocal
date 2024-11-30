@@ -52,9 +52,9 @@ const RetailCard = ({ title, salesInfo, Arrow }) => {
             <Tooltip formatter={(value) => `$${value}`} cursor={{ fill: "none" }} />
             <Scatter
               data={chartData}
-              fill="#3b82f6"
-              line
-              r={0.1}
+              fill="#6366F1"
+              line={{ strokeWidth: 2 }}
+              r={1}
               dot={false}
               shape={<RenderNoShape />}
             />

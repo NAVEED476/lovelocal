@@ -43,7 +43,7 @@ const DirectIndirectChart = ({ totalSales }) => {
           <CartesianGrid strokeDasharray="1 1" />
           <XAxis dataKey="month" />
           <YAxis
-            tickFormatter={(value) => `₹${(value / 100000).toFixed(1)}L`}
+            tickFormatter={(value) => `${(value / 100000)}L`}
           />
           <Tooltip
             formatter={(value) => `₹${(value / 100000).toFixed(1)}L`}

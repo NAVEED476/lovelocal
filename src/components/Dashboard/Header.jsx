@@ -1,6 +1,11 @@
 import React from "react";
 import "../../styles/header.css";
 import filterIcon from "../../assets/filerIcon.png";
+import image1 from "../../assets/image1.png";
+import image2 from "../../assets/image2.png";
+import image3 from "../../assets/image3.png";
+import image4 from "../../assets/image4.png";
+import plusIcon from "../../assets/Path.png";
 const Header = ({userDetails}) => {
   const {designation,name} = userDetails;
   
@@ -26,11 +31,11 @@ const Header = ({userDetails}) => {
       </div>
       <div className="avatar-top-container">
         <div className="avatar-container">
-          <div className="avatar"></div>
-          <div className="avatar"></div>
-          <div className="avatar"></div>
-          <div className="avatar"></div>
-          <button className="add-avatar avatar">+</button>
+          <div className="avatar"><img src={image1} alt="" /></div>
+          <div className="avatar"><img src={image2} alt="" /></div>
+          <div className="avatar"><img src={image3} alt="" /></div>
+          <div className="avatar"><img src={image4} alt="" /></div>
+          <button className="add-avatar avatar"><img src={plusIcon} alt="" /></button>
         </div>
         <div className="header-right-container">
           <div>
