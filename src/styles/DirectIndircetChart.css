@@ -1,75 +1,162 @@
-/* Container styling */
 .chart-container {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 600px;
-    margin: 20px 20px 20px 0px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  /* margin: 20px auto; */
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.chart-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.sales-summary {
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.chart-info {
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.chart-direct {
+  color: #6366f1;
+}
+
+.chart-indirect {
+  color: #38bdf8;
+}
+
+.total-sales {
+  font-size: 30px;
+  font-weight: 500;
+  color: black;
+}
+
+.amount-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.amount-circle {
+  inline-size: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 3px solid #6366f1;
+}
+
+.amount-circle1 {
+  inline-size: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 3px solid #38bdf8;
+}
+
+.amount-container span {
+  margin-left: 15px;
+  margin-right: 15px;
+  color: grey;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .chart-container {
+    padding: 15px;
+    margin-top: 15px;
   }
-  
-  /* Header styling */
-  .chart-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
+
   .chart-title {
-    font-size: 18px;
-    font-weight: 600;
-  }
-  
-  /* Info section styling */
-  .chart-info {
-    display: flex;
-    gap: 10px;
     font-size: 16px;
-    font-weight: 500;
-  }
-  
-  .chart-direct {
-    color: #6366f1;
-  }
-  
-  .chart-indirect {
-    color: #38bdf8;
-  }
-  
-  .total-sales{
-    font-size: 30px;
-    font-weight: 500;
-    color: black;
   }
 
-  .amount-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-    gap: 12px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  .sales-summary {
+    font-size: 14px;
+    gap: 5px;
+    flex-wrap: nowrap;
   }
 
-  .amount-circle {
-    inline-size: 5px;
-    height: 5px;
-    border-radius: 50%;
-    border: 3px solid #6366F1;
+  .total-sales {
+    font-size: 24px;
   }
 
+  .amount-container {
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .amount-circle,
   .amount-circle1 {
-    inline-size: 5px;
-    height: 5px;
-    border-radius: 50%;
-    border: 3px solid #38BDF8;
+    inline-size: 4px;
+    height: 4px;
+    border-width: 2px;
   }
 
-  .amount-container span{
-    margin-left: 15px;
-    margin-right: 15px;
-    color: grey;
+  .amount-container span {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container {
+    padding: 10px;
+    margin: 0px;
+    padding-right: 0;
+    padding-bottom: 50px;
+    width: 100%;
+    margin-top: 20px;
   }
 
-  
+  .chart-title {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .sales-summary {
+    font-size: 12px;
+    flex-wrap: nowrap;
+  }
+
+  .total-sales {
+    font-size: 20px;
+  }
+
+  .amount-container {
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .amount-circle,
+  .amount-circle1 {
+    inline-size: 3px;
+    height: 3px;
+    border-width: 2px;
+  }
+
+  .amount-container span {
+    font-size: 12px;
+    margin: 0;
+  }
+}

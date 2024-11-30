@@ -1,0 +1,126 @@
+.avg-order-chart-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .avg-order-chart-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  .avg-order-chart-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .avg-order-chart-percentage {
+    color: #10b981;
+    background-color: #ecfdf5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+  }
+  
+  .avg-order-chart-total {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  .avg-order-chart-total {
+  display: flex;
+  gap: 15px;
+  font-size: 28px;
+  font-weight: 700;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sales-summary1 {
+  display: flex;
+  justify-content: space-between; 
+  gap: 20px;
+}
+
+.amount-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.amount-circle {
+  inline-size: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 3px solid #6366f1;
+}
+
+.amount-circle1 {
+  inline-size: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 3px solid #38bdf8;
+}
+
+.amount-container span {
+  font-size: 14px;
+  color: grey;
+}
+
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .avg-order-chart-container {
+      padding: 15px;
+      /* margin: 15px; */
+    }
+  
+    .avg-order-chart-title {
+      font-size: 16px;
+    }
+  
+    .avg-order-chart-percentage {
+      font-size: 12px;
+      padding: 4px 8px;
+      margin-left: 10px;
+    }
+  
+    .avg-order-chart-total {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .avg-order-chart-container {
+      padding: 10px;
+      /* margin: 10px; */
+    }
+  
+    .avg-order-chart-title {
+      font-size: 14px;
+      text-align: center;
+    }
+  
+    .avg-order-chart-percentage {
+      font-size: 10px;
+      padding: 3px 6px;
+      margin-left: 5px;
+    }
+  
+    .avg-order-chart-total {
+      font-size: 20px;
+    }
+  }
+  

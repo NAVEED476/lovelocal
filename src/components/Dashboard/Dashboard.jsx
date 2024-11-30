@@ -48,9 +48,8 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <div>
-        <Sidebar />
-      </div>
+      <Sidebar />
+
       <div className="content">
         <TopNavbar />
         <div style={{ margin: "30px" }}>
@@ -80,7 +79,7 @@ const Dashboard = () => {
               Arrow={keyAccountArrow}
             />
           </div>
-          <div style={{ display: "flex", flexWrap:"wrap" }}>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
             <DirectIndirectChart totalSales={totalSales} />
             <AvgOrderValueChart orderValueData={orderValueData} />
           </div>

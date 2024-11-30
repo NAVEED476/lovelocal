@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   ScatterChart,
   Scatter,
@@ -10,9 +10,9 @@ import {
   Legend,
   ZAxis,
 } from "recharts";
+import "../../styles/avgOrderValueChart.css";
 
-
-const AvgOrderValueChart = ({orderValueData}) => {
+const AvgOrderValueChart = ({ orderValueData }) => {
   const {
     fromDate,
     toDate,
@@ -21,8 +21,6 @@ const AvgOrderValueChart = ({orderValueData}) => {
     total,
   } = orderValueData.averageOrderValueInfo;
 
- 
-  // Prepare data for the scatter chart
   const chartDataCurrent = current.map((value, index) => ({
     x: index + 1,
     y: value,
@@ -34,58 +32,35 @@ const AvgOrderValueChart = ({orderValueData}) => {
   }));
 
   const RenderNoShape = () => null;
-
   const customTicks = [0, chartDataCurrent.length - 1];
 
   return (
-    <div
-      style={{
-        padding: "20px",
-        backgroundColor: "#fff",
-        borderRadius: "8px",
-        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-        width: "600px",
-        margin: "20px 0",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginBottom: "20px",
-          alignItems: "center",
-        }}
-      >
-        <div style={{ fontSize: "18px", fontWeight: "600" }}>AVG Order Value</div>
-        <div>
-          <span
-            style={{
-              color: "#10B981",
-              backgroundColor: "#ECFDF5",
-              padding: "5px 10px",
-              borderRadius: "5px",
-              fontSize: "14px",
-              fontWeight: "500",
-            }}
-          >
+    <div className="avg-order-chart-container">
+      <div className="avg-order-chart-header">
+        <div className="avg-order-chart-title">AVG Order Value</div>
+      </div>
+
+      <div className="avg-order-chart-total">
+        <div>₹{total} 
+        <span className="avg-order-chart-percentage">
             +{percentageDifference}%
           </span>
+          </div>{" "}
+        <div className="sales-summary1">
+          <div className="amount-container">
+            <div className="amount-circle"></div>
+
+            <span>Direct</span>
+          </div>
+          <div className="amount-container">
+            <div className="amount-circle1"></div>
+
+            <span>Indirect</span>
+          </div>
         </div>
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          alignItems: "baseline",
-          gap: "10px",
-          fontSize: "28px",
-          fontWeight: "700",
-        }}
-      >
-        ₹{total}
-      </div>
-
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={225}>
         <ScatterChart
           margin={{
             top: 20,
@@ -94,20 +69,19 @@ const AvgOrderValueChart = ({orderValueData}) => {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
+          <CartesianGrid strokeDasharray="1 1" />
           <XAxis
             type="number"
             dataKey="x"
             name="Day"
             ticks={customTicks}
-            tickFormatter={(value, index) => {
-              if (value === 0) {
-                return fromDate;
-              } else if (value === chartDataCurrent.length - 1) {
-                return toDate;
-              }
-              return `Day ${value}`; 
-            }}
+            tickFormatter={(value) =>
+              value === 0
+                ? fromDate
+                : value === chartDataCurrent.length - 1
+                ? toDate
+                : `Day ${value}`
+            }
             padding={{ left: 20, right: 20 }}
           />
           <YAxis
@@ -121,7 +95,7 @@ const AvgOrderValueChart = ({orderValueData}) => {
             formatter={(value) => `₹${(value / 1000).toFixed(1)}k`}
             cursor={{ fill: "rgba(0, 0, 0, 0.1)" }}
           />
-          <Legend verticalAlign="top" height={36} />
+
           <Scatter
             name="Current"
             data={chartDataCurrent}

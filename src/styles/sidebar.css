@@ -1,4 +1,4 @@
-
+/* Base Styles */
 .sidebar {
   width: 250px;
   background-color: #1e293b;
@@ -9,9 +9,8 @@
   padding: 16px;
   position: sticky;
   top: 0;
+  transition: width 0.3s ease;
 }
-
-
 
 .logo-placeholder {
   height: 40px;
@@ -25,12 +24,11 @@
   text-transform: uppercase;
 }
 
-
 .section-header {
   font-size: 12px;
   font-weight: bold;
   margin-bottom: 16px;
-  color: #9ca3af; 
+  color: #9ca3af;
 }
 
 .nav-item {
@@ -38,19 +36,17 @@
   align-items: center;
   gap: 10px;
   padding: 10px 12px;
-  border-radius: 8px; 
+  border-radius: 8px;
   margin-bottom: 8px;
   cursor: pointer;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
 .nav-item.active {
   background-color: #111827;
-  color: #3b82f6; 
+  color: #3b82f6;
 }
-
 
 .nav-icon {
   height: 20px;
@@ -61,4 +57,99 @@
 
 .nav-item:hover {
   background-color: #1f2937;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1024px) {
+  /* Tablet */
+  .sidebar {
+    width: 200px;
+  }
+  
+  .logo-placeholder {
+    height: 35px;
+    width: 35px;
+  }
+  
+  .section-header {
+    font-size: 14px;
+  }
+  
+  .nav-item {
+    padding: 8px 10px;
+  }
+  
+  .nav-item span {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile */
+  .sidebar {
+    width: 180px;
+  }
+  
+  .logo-placeholder {
+    height: 30px;
+    width: 30px;
+  }
+  
+  .section-header {
+    font-size: 14px;
+  }
+  
+  .nav-item {
+    padding: 8px 10px;
+  }
+  
+  .nav-item span {
+    font-size: 12px;
+  }
+
+  /* Collapsible Sidebar on Mobile */
+  .sidebar {
+    position: fixed;
+    left: -250px; /* Hide initially */
+    top: 0;
+    bottom: 0;
+    transition: left 0.3s ease;
+  }
+  
+  .sidebar.open {
+    left: 0; /* Show when toggled */
+  }
+  
+  /* Hamburger Menu */
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .bar {
+    height: 4px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: 0.3s ease;
+  }
+  
+  .sidebar.open .hamburger-menu .bar:nth-child(1) {
+    transform: rotate(45deg);
+    transform-origin: top left;
+  }
+
+  .sidebar.open .hamburger-menu .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .sidebar.open .hamburger-menu .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+  }
 }
