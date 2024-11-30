@@ -2,6 +2,11 @@
 
 A React.js project for building dynamic and interactive dashboards using Recharts, D3, and other libraries for seamless data visualization.
 
+![image](https://github.com/user-attachments/assets/f0dbd52b-11bd-44d9-8123-61485315d836)
+![image](https://github.com/user-attachments/assets/65936c3a-c282-4d6b-958b-9c85c2b0264b)
+![image](https://github.com/user-attachments/assets/d5d154f3-e36b-4968-bb92-039036a1abb7)
+![image](https://github.com/user-attachments/assets/857304be-74f4-4ca9-a35e-fda31f9287ad)
+
 ## Table of Contents
 1. [About the Project](#about-the-project)
 2. [Technologies Used](#technologies-used)
