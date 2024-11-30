@@ -1,0 +1,90 @@
+.dashboard {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 390px;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.icon-wrapper {
+  background: #e3f2fd;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.menu-dots {
+  font-size: 18px;
+  color: #b0b0b0;
+  cursor: pointer;
+}
+
+.card-content p {
+  font-size: 12px;
+  color: #999;
+}
+
+.sales-data {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 8px;
+}
+
+.amount {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.percentage {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.percentage.up {
+  color: #fff;
+  padding: 3px 4px;
+  background: #10B981;
+  border-radius: 18px;
+  font-size: 12px;
+}
+
+.percentage.down {
+  color: #fff;
+  padding: 3px 4px;
+  background: #F59E0B;
+  border-radius: 18px;
+  font-size: 12px;
+}
+
+.chart {
+  margin-top: 16px;
+  height: 80px;
+  width: 100%;
+}
